@@ -1,13 +1,127 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors Arena</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="background-animation">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
+
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1 class="title gradient-text">Rock Paper Scissors Arena</h1>
+            <p class="subtitle">The classic game with modern style and detailed statistics</p>
+        </div>
+
+        <!-- Game Area -->
+        <div class="game-area">
+            <!-- Main Game -->
+            <div class="main-game glass-card">
+                <!-- Welcome Screen -->
+                <div id="welcome-screen">
+                    <h2 class="game-title">Choose Your Weapon</h2>
+                    <p class="game-subtitle">Select Rock, Paper, or Scissors to battle the computer</p>
+                    
+                    <div class="choices-grid">
+                        <div class="choice-btn" data-choice="rock">
+                            <div class="choice-icon">🗿</div>
+                            <div class="choice-name">Rock</div>
+                        </div>
+                        <div class="choice-btn" data-choice="paper">
+                            <div class="choice-icon">📄</div>
+                            <div class="choice-name">Paper</div>
+                        </div>
+                        <div class="choice-btn" data-choice="scissors">
+                            <div class="choice-icon">✂️</div>
+                            <div class="choice-name">Scissors</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Game Screen -->
+                <div id="game-screen" class="hidden">
+                    <!-- Battle Area -->
+                    <div class="battle-area">
+                        <div class="vs-section">
+                            <div class="player-choice">
+                                <div>Your Choice</div>
+                                <div id="player-display" class="choice-display">?</div>
+                            </div>
+                            <div class="vs-text">VS</div>
+                            <div class="computer-choice">
+                                <div>Computer</div>
+                                <div id="computer-display" class="choice-display">?</div>
+                            </div>
+                        </div>
+                        <div class="result-text" id="result-text"></div>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="action-buttons">
+                        <button class="quantum-btn" id="play-again-btn">Play Again</button>
+                        <button class="quantum-btn" id="reset-stats-btn">Reset Stats</button>
+                        <button class="quantum-btn" id="change-weapon-btn">Change Weapon</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stats Panel -->
+            <div class="stats-panel glass-card">
+                <h3 class="stats-title">Game Statistics</h3>
+                
+                <div class="stat-item">
+                    <span class="stat-label">Games Played</span>
+                    <span class="stat-value" id="games-played">0</span>
+                </div>
+                
+                <div class="stat-item">
+                    <span class="stat-label">Wins</span>
+                    <span class="stat-value" id="total-wins">0</span>
+                </div>
+                
+                <div class="stat-item">
+                    <span class="stat-label">Losses</span>
+                    <span class="stat-value" id="total-losses">0</span>
+                </div>
+                
+                <div class="stat-item">
+                    <span class="stat-label">Ties</span>
+                    <span class="stat-value" id="total-ties">0</span>
+                </div>
+                
+                <div class="stat-item">
+                    <span class="stat-label">Win Rate</span>
+                    <span class="stat-value" id="win-rate">0%</span>
+                </div>
+                
+                <div class="win-rate-bar">
+                    <div class="win-rate-fill" id="win-rate-fill"></div>
+                </div>
+                
+                <div class="stat-item">
+                    <span class="stat-label">Current Streak</span>
+                    <span class="stat-value" id="current-streak">0</span>
+                </div>
+                
+                <div class="stat-item">
+                    <span class="stat-label">Best Streak</span>
+                    <span class="stat-value" id="best-streak">0</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
 </html>
